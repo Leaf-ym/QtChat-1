@@ -24,4 +24,14 @@
       <ParseFiles>false</ParseFiles>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UserEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UserEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

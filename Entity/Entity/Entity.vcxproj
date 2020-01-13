@@ -10,6 +10,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UserEntity.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UserEntity.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4C6F2E04-6ACE-4824-B1CD-E27D6BA1AE63}</ProjectGuid>
     <Keyword>QtVS_v302</Keyword>
