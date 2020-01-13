@@ -83,10 +83,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
     <ClInclude Include="entity_global.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
