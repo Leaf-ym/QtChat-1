@@ -3,6 +3,7 @@
 #include <QtWidgets/QWidget>
 #include "ui_Login.h"
 #include "registWindow.h"
+#include "MainWindow.h"
 class Login : public QWidget
 {
 	Q_OBJECT
@@ -15,4 +16,5 @@ private:
 	//registWindow *registWin;
 public slots:
 	void registClicked();
+	void loginClicked();
 };

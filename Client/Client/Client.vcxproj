@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="registWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Login.ui" />
+    <QtUic Include="MainWindow.ui" />
     <QtUic Include="registWindow.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="registWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MainWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

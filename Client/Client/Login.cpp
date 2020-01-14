@@ -10,8 +10,15 @@ Login::Login(QWidget *parent)
 void Login::registClicked()
 {
 	registWindow *registWin;
-	registWin = new registWindow(0);
+	registWin = new registWindow();
 	//registWin->setParent(NULL);
 	registWin->show();
+	close();
+}
+
+void Login::loginClicked()
+{
+	MainWindow *mainWin = new MainWindow();
+	mainWin->show();
 	close();
 }
