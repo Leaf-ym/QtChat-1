@@ -82,15 +82,20 @@
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="registWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Login.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Login.ui" />
+    <QtUic Include="registWindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Login.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="registWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

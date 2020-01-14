@@ -6,3 +6,12 @@ Login::Login(QWidget *parent)
 	ui.setupUi(this);
 	ui.passwdEdit->setEchoMode(QLineEdit::Password);
 }
+
+void Login::registClicked()
+{
+	registWindow *registWin;
+	registWin = new registWindow(0);
+	//registWin->setParent(NULL);
+	registWin->show();
+	close();
+}

@@ -31,14 +31,23 @@
     <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="registWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Login.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="registWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Login.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="registWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
