@@ -2,7 +2,8 @@
 #include "Login.h"
 #include <QDebug>
 #include <QMessageBox>
-//#include "User.h"
+#include "Entity.h"
+
 registWindow::registWindow(QWidget *parent)
 	: QWidget(parent)
 {

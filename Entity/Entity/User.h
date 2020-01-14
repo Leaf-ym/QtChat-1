@@ -1,5 +1,4 @@
 #pragma once
-#include "entity_global.h"
 #include <QString>
 class User
 {
