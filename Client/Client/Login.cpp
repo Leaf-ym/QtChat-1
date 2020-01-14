@@ -11,7 +11,13 @@ void Login::registClicked()
 {
 	registWindow *registWin;
 	registWin = new registWindow();
-	//registWin->setParent(NULL);
+
+	QString name = ui.nameEdit->text();
+	if (!name.isEmpty())
+	{
+		registWin->setName(name);
+	}
+
 	registWin->show();
 	close();
 }
@@ -22,3 +28,9 @@ void Login::loginClicked()
 	mainWin->show();
 	close();
 }
+
+void Login::setName(const QString & name)
+{
+	ui.nameEdit->setText(name);
+}
+

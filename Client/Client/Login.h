@@ -17,4 +17,8 @@ private:
 public slots:
 	void registClicked();
 	void loginClicked();
+
+public:
+	void setName(const QString& name);
+
 };

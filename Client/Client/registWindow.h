@@ -18,4 +18,7 @@ public slots:
 	void loginClicked();
 	void registClicked();
 
+public:
+	void setName(const QString& name);
+	void closeEvent(QCloseEvent *event);
 };

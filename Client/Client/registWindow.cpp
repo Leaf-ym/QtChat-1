@@ -15,10 +15,24 @@ registWindow::~registWindow()
 void registWindow::registClicked()
 {
 	Login *login = new Login();
+	QString name = ui.nameEdit->text();
+	if (!name.isEmpty())
+	{
+		login->setName(name);
+	}
 	login->show();
 	close();
 }
+void registWindow::setName(const QString & name)
+{
+	ui.nameEdit->setText(name);
+}
+void registWindow::closeEvent(QCloseEvent * event)
+{
+}
 void registWindow::loginClicked()
 {
-
+	Login *login = new Login();
+	login->show();
+	close();
 }
