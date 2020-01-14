@@ -2,7 +2,7 @@
 
 #include <QWidget>
 #include "ui_registWindow.h"
-
+#include <QRegExp>
 class registWindow : public QWidget
 {
 	Q_OBJECT
@@ -14,11 +14,17 @@ public:
 private:
 	Ui::registWindow ui;
 
+	bool isName;
+	bool isPassword;
+	bool isConfirm;
+
 public slots:
 	void loginClicked();
 	void registClicked();
 
 public:
 	void setName(const QString& name);
-	void closeEvent(QCloseEvent *event);
+
+	bool eventFilter(QObject *watched, QEvent *event);
+	bool isSuccess();
 };
