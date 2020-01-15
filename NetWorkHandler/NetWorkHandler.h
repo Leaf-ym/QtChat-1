@@ -4,8 +4,6 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 
-#define HostIp "192.168.20.129"
-
 //自定义协议包
 class NETWORKHANDLER_EXPORT NetWorkHandler
 {
