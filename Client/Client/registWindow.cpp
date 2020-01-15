@@ -2,8 +2,8 @@
 #include "Login.h"
 #include <QDebug>
 #include <QMessageBox>
-#include "Entity/User.h"
-#include "ClientRegist.h"
+#include "Entity.h"
+
 registWindow::registWindow(QWidget *parent)
 	: QWidget(parent)
 {
@@ -33,13 +33,6 @@ void registWindow::registClicked()
 	if(isSuccess())
 	{
 		//正确处理之后
-		User user;
-		user.setName(ui.nameEdit->text());
-		user.setPassword(ui.passwdEdit->text());
-		user.setOnline(true);
-
-		ClientRegist cr(user);
-		cr.run();
 	}
 	else
 	{
