@@ -97,8 +97,8 @@
     <ProjectReference Include="..\..\Entity\Entity\Entity.vcxproj">
       <Project>{c0c0404f-eafc-45b3-b1da-b5688ac5a3e8}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\NetWorkHandler\NetWorkHandler.vcxproj">
-      <Project>{6ce38478-cd5d-4d0b-a1a0-94fb65063574}</Project>
+    <ProjectReference Include="..\..\NetWorkHandler\NetWorkHandler\NetWorkHandler.vcxproj">
+      <Project>{f62ba7e9-ea20-4943-9601-935665566dc9}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,5 @@
 #include "Server.h"
-#include "NetWorkHandler.h"
+#include "NetWorkHandler/NetWorkHandler.h"
 Server::Server(QWidget *parent)
 	: QWidget(parent)
 {

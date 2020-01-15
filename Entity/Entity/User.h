@@ -1,6 +1,7 @@
 #pragma once
 #include <QString>
-class User
+#include "entity_global.h"
+class ENTITY_EXPORT User
 {
 private:
 	int id;
