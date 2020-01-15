@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Entity", "..\Entity\Entity\Entity.vcxproj", "{C0C0404F-EAFC-45B3-B1DA-B5688AC5A3E8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetWorkHandler", "..\NetWorkHandler\NetWorkHandler.vcxproj", "{6CE38478-CD5D-4D0B-A1A0-94FB65063574}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,10 +21,6 @@ Global
 		{C0C0404F-EAFC-45B3-B1DA-B5688AC5A3E8}.Debug|x64.Build.0 = Debug|x64
 		{C0C0404F-EAFC-45B3-B1DA-B5688AC5A3E8}.Release|x64.ActiveCfg = Release|x64
 		{C0C0404F-EAFC-45B3-B1DA-B5688AC5A3E8}.Release|x64.Build.0 = Release|x64
-		{6CE38478-CD5D-4D0B-A1A0-94FB65063574}.Debug|x64.ActiveCfg = Debug|x64
-		{6CE38478-CD5D-4D0B-A1A0-94FB65063574}.Debug|x64.Build.0 = Debug|x64
-		{6CE38478-CD5D-4D0B-A1A0-94FB65063574}.Release|x64.ActiveCfg = Release|x64
-		{6CE38478-CD5D-4D0B-A1A0-94FB65063574}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

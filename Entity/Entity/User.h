@@ -9,6 +9,9 @@ private:
 	bool online;
 
 public:
+	User();
+	~User();
+	
 	int getId() const { return id; }
 	void setId(int val) { id = val; }
 
