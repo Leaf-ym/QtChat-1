@@ -17,4 +17,5 @@ private:
 	QTcpServer *server;
 public slots:
 	void startClicked();
+	void connectSlot();
 };

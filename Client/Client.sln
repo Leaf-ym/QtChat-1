@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "..\Server\Server\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetWorkHandler", "..\NetWorkHandler\NetWorkHandler\NetWorkHandler.vcxproj", "{F62BA7E9-EA20-4943-9601-935665566DC9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SqlHandler", "..\SqlHandler\SqlHandler.vcxproj", "{55BC594A-7BBF-4F64-A8A4-13FDBBB4C154}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,6 +35,10 @@ Global
 		{F62BA7E9-EA20-4943-9601-935665566DC9}.Debug|x64.Build.0 = Debug|x64
 		{F62BA7E9-EA20-4943-9601-935665566DC9}.Release|x64.ActiveCfg = Release|x64
 		{F62BA7E9-EA20-4943-9601-935665566DC9}.Release|x64.Build.0 = Release|x64
+		{55BC594A-7BBF-4F64-A8A4-13FDBBB4C154}.Debug|x64.ActiveCfg = Debug|x64
+		{55BC594A-7BBF-4F64-A8A4-13FDBBB4C154}.Debug|x64.Build.0 = Debug|x64
+		{55BC594A-7BBF-4F64-A8A4-13FDBBB4C154}.Release|x64.ActiveCfg = Release|x64
+		{55BC594A-7BBF-4F64-A8A4-13FDBBB4C154}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

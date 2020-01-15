@@ -3,6 +3,7 @@
 #include <QWidget>
 #include "ui_registWindow.h"
 #include <QRegExp>
+#include <QTcpSocket>
 class registWindow : public QWidget
 {
 	Q_OBJECT
@@ -18,10 +19,11 @@ private:
 	bool isPassword;
 	bool isConfirm;
 
+	QTcpSocket *regist;
 public slots:
 	void loginClicked();
 	void registClicked();
-
+	void registSlot();
 public:
 	void setName(const QString& name);
 

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F62BA7E9-EA20-4943-9601-935665566DC9}</ProjectGuid>
+    <ProjectGuid>{55BC594A-7BBF-4F64-A8A4-13FDBBB4C154}</ProjectGuid>
     <Keyword>QtVS_v302</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
@@ -43,11 +43,11 @@
   </ImportGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;network;sql</QtModules>
+    <QtModules>core;sql</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core;network;sql</QtModules>
+    <QtModules>core;sql</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
     <Import Project="$(QtMsBuild)\qt.props" />
@@ -59,8 +59,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <PreprocessorDefinitions>NETWORKHANDLER_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\QtChat\SqlHandler;E:\QtChat\Entity;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SQLHANDLER_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\QtChat\Entity;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -74,7 +74,7 @@
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <PreprocessorDefinitions>NETWORKHANDLER_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SQLHANDLER_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -83,22 +83,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ClientRegist.cpp" />
-    <ClCompile Include="NetWorkHandler.cpp" />
-    <ClCompile Include="ServerRegist.cpp" />
+    <ClCompile Include="SqlHandler.cpp" />
+    <ClCompile Include="UserHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="ClientRegist.h" />
-    <ClInclude Include="NetWorkHandler.h" />
-    <ClInclude Include="networkhandler_global.h" />
-    <QtMoc Include="ServerRegist.h" />
+    <ClInclude Include="SqlHandler.h" />
+    <ClInclude Include="sqlhandler_global.h" />
+    <ClInclude Include="UserHandler.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entity\Entity\Entity.vcxproj">
+    <ProjectReference Include="..\Entity\Entity\Entity.vcxproj">
       <Project>{c0c0404f-eafc-45b3-b1da-b5688ac5a3e8}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SqlHandler\SqlHandler.vcxproj">
-      <Project>{55bc594a-7bbf-4f64-a8a4-13fdbbb4c154}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

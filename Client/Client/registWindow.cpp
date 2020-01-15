@@ -2,7 +2,10 @@
 #include "Login.h"
 #include <QDebug>
 #include <QMessageBox>
+#include "NetWorkHandler/ClientRegist.h"
+#include "NetWorkHandler/NetWorkHandler.h"
 #include "Entity/Entity.h"
+#include <QHostAddress>
 
 registWindow::registWindow(QWidget *parent)
 	: QWidget(parent)
@@ -15,6 +18,9 @@ registWindow::registWindow(QWidget *parent)
 	ui.nameEdit->installEventFilter(this);
 	ui.passwdEdit->installEventFilter(this);
 	ui.confirmEdit->installEventFilter(this);
+
+	regist = new QTcpSocket();
+	regist->connectToHost(QHostAddress(HostIp), 12345);
 }
 
 registWindow::~registWindow()
@@ -33,20 +39,45 @@ void registWindow::registClicked()
 	if(isSuccess())
 	{
 		//正确处理之后
+		NetWorkHandler package(NetWorkHandler::regist);
+		package["name"] = ui.nameEdit->text();
+		package["password"] = ui.passwdEdit->text();
+
+		ClientRegist *cr = new ClientRegist(regist);
+		cr->run(package);
+
+		connect(regist, SIGNAL(readyRead()), this, SLOT(registSlot()));
 	}
 	else
 	{
 		return;
 	}
+}
+void registWindow::registSlot()
+{
+	NetWorkHandler nh;
+	QByteArray byteArray = this->regist->readAll();
+	int len = 0;
 
-	Login *login = new Login();
-	QString name = ui.nameEdit->text();
-	if (!name.isEmpty())
+	while (len = nh.unpack(byteArray) > 0)
 	{
-		login->setName(name);
+		if (nh.getType() == NetWorkHandler::success)
+		{
+			QMessageBox *mss = new QMessageBox(QMessageBox::Information,
+				QString::fromLocal8Bit("注册成功")
+				, QString::fromLocal8Bit("注册账号成功"));
+			mss->show();
+			return;
+		}
+		else
+		{
+			QMessageBox *mss = new QMessageBox(QMessageBox::Information,
+				QString::fromLocal8Bit("注册失败"),
+				QString::fromLocal8Bit("注册账号已存在"));
+			mss->show();
+			return;
+		}
 	}
-	login->show();
-	close();
 }
 void registWindow::setName(const QString & name)
 {

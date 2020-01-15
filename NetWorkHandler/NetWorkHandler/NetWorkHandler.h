@@ -14,6 +14,9 @@ public:
 		regist,             //×¢²á
 		login,              //µÇÂ¼
 		//chat                //ÁÄÌì
+
+		success = 10,
+		fail
 	};
 	
 public:
