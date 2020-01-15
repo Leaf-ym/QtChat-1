@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QObject>
-#include "Entity/User.h"
 #include <QTcpSocket>
 #include "networkhandler_global.h"
 #include "NetWorkHandler.h"
@@ -19,6 +18,5 @@ public:
 	~ClientRegist();
 
 	void run( NetWorkHandler &pack);
-	//void handler(const NetWorkHandler &pack);
 
 };

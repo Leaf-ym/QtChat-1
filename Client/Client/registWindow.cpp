@@ -20,7 +20,7 @@ registWindow::registWindow(QWidget *parent)
 	ui.confirmEdit->installEventFilter(this);
 
 	regist = new QTcpSocket();
-	regist->connectToHost(QHostAddress(HostIp), 12345);
+	regist->connectToHost(QHostAddress(HostIp), Port);
 }
 
 registWindow::~registWindow()
@@ -42,6 +42,7 @@ void registWindow::registClicked()
 		NetWorkHandler package(NetWorkHandler::regist);
 		package["name"] = ui.nameEdit->text();
 		package["password"] = ui.passwdEdit->text();
+		package["type"] = NetWorkHandler::regist;
 
 		ClientRegist *cr = new ClientRegist(regist);
 		cr->run(package);
@@ -67,6 +68,31 @@ void registWindow::registSlot()
 				QString::fromLocal8Bit("注册成功")
 				, QString::fromLocal8Bit("注册账号成功"));
 			mss->show();
+			return;
+		}
+		else
+		{
+			QMessageBox *mss = new QMessageBox(QMessageBox::Information,
+				QString::fromLocal8Bit("注册失败"),
+				QString::fromLocal8Bit("注册账号已存在"));
+			mss->show();
+			return;
+		}
+	}
+}
+void registWindow::loginSlot()
+{
+	NetWorkHandler nh;
+	QByteArray byteArray = this->regist->readAll();
+	int len = 0;
+
+	while (len = nh.unpack(byteArray) > 0)
+	{
+		if (nh.getType() == NetWorkHandler::success)
+		{
+			MainWindow *mainWin = new MainWindow();
+			mainWin->show();
+			close();
 			return;
 		}
 		else
@@ -197,5 +223,21 @@ bool registWindow::isSuccess()
 }
 void registWindow::loginClicked()
 {
-	
+	if (isSuccess())
+	{
+		//正确处理之后
+		NetWorkHandler package(NetWorkHandler::regist);
+		package["name"] = ui.nameEdit->text();
+		package["password"] = ui.passwdEdit->text();
+		package["type"] = NetWorkHandler::login;
+
+		ClientRegist *cr = new ClientRegist(regist);
+		cr->run(package);
+
+		connect(regist, SIGNAL(readyRead()), this, SLOT(loginSlot()));
+	}
+	else
+	{
+		return;
+	}
 }

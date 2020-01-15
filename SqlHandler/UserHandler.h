@@ -9,5 +9,8 @@ public:
 	~UserHandler();
 
 	bool selectUser(const User& user);
+	bool selectUser(const User& user, const int flag);
 	void insertUser(const User& user);
+	bool offlineUser(const User& user);
+	bool onlineUser(const User& user);
 };

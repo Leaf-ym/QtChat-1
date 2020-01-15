@@ -83,12 +83,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClientLogin.cpp" />
     <ClCompile Include="ClientRegist.cpp" />
     <ClCompile Include="NetWorkHandler.cpp" />
     <ClCompile Include="ServerRegist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ClientRegist.h" />
+    <QtMoc Include="ClientLogin.h" />
     <ClInclude Include="NetWorkHandler.h" />
     <ClInclude Include="networkhandler_global.h" />
     <QtMoc Include="ServerRegist.h" />

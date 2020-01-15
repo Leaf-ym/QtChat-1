@@ -24,6 +24,7 @@ public slots:
 	void loginClicked();
 	void registClicked();
 	void registSlot();
+	void loginSlot();
 public:
 	void setName(const QString& name);
 

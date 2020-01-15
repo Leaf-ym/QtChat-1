@@ -19,7 +19,7 @@ void Server::startClicked()
 		ui.textEdit->append("started");
 		return; 
 	}
-	if (server->listen(QHostAddress(HostIp), 12345)) {
+	if (server->listen(QHostAddress(HostIp), Port)) {
 		ui.textEdit->append("success");
 	}
 	else {
@@ -31,5 +31,4 @@ void Server::connectSlot()
 {
 	QTcpSocket* clientSocket = this->server->nextPendingConnection();
 	new ServerRegist (clientSocket,this);
-	ui.textEdit->append("connect");
 }

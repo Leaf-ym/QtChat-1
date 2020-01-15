@@ -20,7 +20,6 @@ void ServerRegist::readyReadSlot()
 {
 	QByteArray byteArray = this->clientSocket->readAll();
 
-	qDebug() << "read";
 	//½â°ü
 	NetWorkHandler packRet;
 	int len = 0;
@@ -30,19 +29,56 @@ void ServerRegist::readyReadSlot()
 		user.setName(packRet["name"].toString());
 		user.setPassword(packRet["password"].toString());
 		UserHandler uh;
-		if (!uh.selectUser(user))
+		if (packRet.getType() == NetWorkHandler::regist)
 		{
-			uh.insertUser(user);
-			nh.setType(NetWorkHandler::success);
-			qDebug() << "successRegist";
-			break;
+			if (packRet["type"] == NetWorkHandler::regist)
+			{
+				if (!uh.selectUser(user))
+				{
+					uh.insertUser(user);
+					nh.setType(NetWorkHandler::success);
+					break;
+				}
+				else
+				{
+					nh.setType(NetWorkHandler::fail);
+					break;
+				}
+			}
+			else
+			{
+				if (!uh.selectUser(user))
+				{
+					uh.insertUser(user);
+					uh.onlineUser(user);
+					nh.setType(NetWorkHandler::success);
+					break;
+				}
+				else
+				{
+					nh.setType(NetWorkHandler::fail);
+					break;
+				}
+			}
 		}
 		else
 		{
-			nh.setType(NetWorkHandler::fail);
-			qDebug() << "failRegist";
-			break;
+			
+			if (uh.selectUser(user,1))
+			{
+				if (uh.onlineUser(user))
+				{
+					nh.setType(NetWorkHandler::success);
+					break;
+				}	
+			}
+			else
+			{
+				nh.setType(NetWorkHandler::fail);
+				break;
+			}
 		}
+		
 	}
 	clientSocket->write(nh.pack());
 }
