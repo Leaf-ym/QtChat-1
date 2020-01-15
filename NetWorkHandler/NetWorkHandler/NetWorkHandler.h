@@ -22,8 +22,14 @@ public:
 	NetWorkHandler::dateType getType() const { return type; }
 	void setType(NetWorkHandler::dateType val) { type = val; }
 
-	QJsonValue operator[](const QString &key) const;
-	QJsonValueRef operator[](const QString &key);
+	QJsonValue operator[](const QString &key) const
+	{
+		return body[key];
+	}
+	QJsonValueRef operator[](const QString &key)
+	{
+		return body[key];
+	}
 
 	QByteArray pack();	//·â°ü
 	int unpack(QByteArray byte);	//½â°ü

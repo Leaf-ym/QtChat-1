@@ -3,7 +3,8 @@
 #include <QObject>
 #include "Entity/User.h"
 #include <QTcpSocket>
-class ClientRegist
+#include "networkhandler_global.h"
+class NETWORKHANDLER_EXPORT ClientRegist
 {
 private:
 	User user;

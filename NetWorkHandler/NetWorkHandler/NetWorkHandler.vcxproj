@@ -60,7 +60,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <PreprocessorDefinitions>NETWORKHANDLER_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\QtChat\Entity;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QtChat\Entity;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -83,9 +83,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClientRegist.cpp" />
     <ClCompile Include="NetWorkHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClientRegist.h" />
     <ClInclude Include="NetWorkHandler.h" />
     <ClInclude Include="networkhandler_global.h" />
   </ItemGroup>

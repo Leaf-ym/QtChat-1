@@ -24,9 +24,15 @@
     <ClCompile Include="NetWorkHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ClientRegist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NetWorkHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientRegist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
