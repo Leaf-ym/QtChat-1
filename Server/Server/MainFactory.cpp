@@ -1,5 +1,5 @@
 #include "MainFactory.h"
-
+#include "NetWorkHandler/OfflineHandler.h"
 MainFactory::MainFactory()
 {
 }
@@ -16,9 +16,10 @@ MainHandler * MainFactory::createHandler(NetWorkHandler::dateType type)
 	{
 	case NetWorkHandler::none:
 		break;
-	case NetWorkHandler::regist:
+	case NetWorkHandler::offline:
+		myHandler = new OfflineHandler();
 		break;
-	case NetWorkHandler::login:
+	case NetWorkHandler::online:
 		break;
 	case NetWorkHandler::success:
 		break;

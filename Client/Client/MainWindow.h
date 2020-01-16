@@ -10,9 +10,11 @@ class MainWindow : public QWidget
 public:
 	MainWindow(QWidget *parent = Q_NULLPTR);
 	~MainWindow();
-
+	void closeEvent(QCloseEvent *event);
+	void setName(const QString& userName);
 private:
 	Ui::MainWindow ui;
 	QTcpSocket *client;
+	QString name;
 
 };

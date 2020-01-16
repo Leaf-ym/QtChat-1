@@ -1,7 +1,8 @@
 #pragma once
-#include <QMap>
 #include <QTcpSocket>
 #include <QMutex>
+#include <QVector>
+#include "SocketHandler.h"
 class CurrentUser
 {
 public:
@@ -10,10 +11,10 @@ public:
 	static CurrentUser *getInst();
 
 	//添加用户
-	void insertNewClient(const QTcpSocket*);
+	void insertNewClient(const SocketHandler*);
 	//查找用户
 private:
-	QMap<const QTcpSocket*, QString> users;
+	QVector<const SocketHandler*> users;
 	CurrentUser();
 	
 	CurrentUser(const CurrentUser&) = delete;

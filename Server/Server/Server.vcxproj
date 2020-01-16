@@ -85,6 +85,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainFactory.cpp" />
     <ClCompile Include="Server.cpp" />
+    <ClCompile Include="SocketHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Server.h" />
@@ -109,6 +110,7 @@
   <ItemGroup>
     <ClInclude Include="CurrentUser.h" />
     <ClInclude Include="MainFactory.h" />
+    <QtMoc Include="SocketHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -83,7 +83,6 @@ bool UserHandler::onlineUser(const User & user)
 	if (query.next())
 	{
 		if (query.value("online") == 1)return false;
-		qDebug() << query.value("online");
 	}
 	else
 	{

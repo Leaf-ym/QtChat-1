@@ -16,9 +16,11 @@ public:
 		none,               //空   0
 		regist,             //注册
 		login,              //登录
-		//chat                //聊天
+		offline,			//下线
+		online,				//上线
+		//chat               //聊天
 
-		success = 10,
+		success = 100,
 		fail
 	};
 	

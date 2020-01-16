@@ -36,12 +36,18 @@
     <ClCompile Include="MainHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OfflineHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NetWorkHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MainHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OfflineHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

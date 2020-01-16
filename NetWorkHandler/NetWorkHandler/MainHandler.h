@@ -2,9 +2,9 @@
 
 #include <QTcpSocket>
 #include "NetWorkHandler.h"
-
+#include "networkhandler_global.h"
 //产品接口
-class MainHandler
+class NETWORKHANDLER_EXPORT MainHandler
 {
 public:
 	MainHandler();

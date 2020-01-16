@@ -23,7 +23,7 @@ CurrentUser * CurrentUser::getInst()
 	return instance;
 }
 
-void CurrentUser::insertNewClient(const QTcpSocket *client)
+void CurrentUser::insertNewClient(const SocketHandler *client)
 {
-	users.insert(client, QString());
+	users.push_back(client);
 }

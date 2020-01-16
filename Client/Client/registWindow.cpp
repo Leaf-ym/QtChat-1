@@ -92,6 +92,7 @@ void registWindow::loginSlot()
 		{
 			MainWindow *mainWin = new MainWindow();
 			mainWin->show();
+			mainWin->setName(ui.nameEdit->text());
 			close();
 			return;
 		}

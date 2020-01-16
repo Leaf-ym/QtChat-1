@@ -62,6 +62,7 @@ void Login::loginSlot()
 		if (nh.getType() == NetWorkHandler::success)
 		{
 			MainWindow *mainWin = new MainWindow();
+			mainWin->setName(ui.nameEdit->text());
 			mainWin->show();
 			close();
 			return;

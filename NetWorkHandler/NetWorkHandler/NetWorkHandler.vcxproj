@@ -87,9 +87,11 @@
     <ClCompile Include="ClientRegist.cpp" />
     <ClCompile Include="MainHandler.cpp" />
     <ClCompile Include="NetWorkHandler.cpp" />
+    <ClCompile Include="OfflineHandler.cpp" />
     <ClCompile Include="ServerRegist.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OfflineHandler.h" />
     <QtMoc Include="ClientRegist.h" />
     <QtMoc Include="ClientLogin.h" />
     <ClInclude Include="MainHandler.h" />

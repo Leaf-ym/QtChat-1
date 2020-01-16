@@ -2,6 +2,7 @@
 #include "NetWorkHandler/NetWorkHandler.h"
 #include "NetWorkHandler/ServerRegist.h"
 #include "CurrentUser.h"
+#include "SocketHandler.h"
 
 Server::Server(QWidget *parent)
 	: QWidget(parent)
@@ -44,7 +45,6 @@ void Server::startClicked()
 			ui.textEdit->append("main fail");
 		}
 	}
-
 }
 
 void Server::connectSlot()
@@ -55,14 +55,11 @@ void Server::connectSlot()
 
 void Server::mainSlot()
 {
-	QTcpSocket *client = server->nextPendingConnection();
+	QTcpSocket *client = mainServer->nextPendingConnection();
 
 	CurrentUser *inst = CurrentUser::getInst();
+	SocketHandler *sh = new SocketHandler(client, this);
+	inst->insertNewClient(sh);
 
-	inst->insertNewClient(client);
-	//connect(client, &QTcpSocket::disconnected, [=]()
-	//{
-
-	//});
 }
 
