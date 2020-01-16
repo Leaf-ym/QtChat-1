@@ -1,7 +1,7 @@
 #include "Server.h"
 #include "NetWorkHandler/NetWorkHandler.h"
 #include "NetWorkHandler/ServerRegist.h"
-
+#include "CurrentUser.h"
 
 Server::Server(QWidget *parent)
 	: QWidget(parent)
@@ -22,7 +22,7 @@ void Server::startClicked()
 	{
 		if (server->isListening()) {
 			ui.textEdit->append("login started");
-			return;
+			break;
 		}
 		if (server->listen(QHostAddress(HostIp), Port)) {
 			ui.textEdit->append("login success");
@@ -35,9 +35,9 @@ void Server::startClicked()
 	{
 		if (mainServer->isListening()) {
 			ui.textEdit->append("main started");
-			return;
+			break;
 		}
-		if (mainServer->listen(QHostAddress(HostIp), Port)) {
+		if (mainServer->listen(QHostAddress(HostIp), MainPort)) {
 			ui.textEdit->append("main success");
 		}
 		else {
@@ -55,5 +55,14 @@ void Server::connectSlot()
 
 void Server::mainSlot()
 {
+	QTcpSocket *client = server->nextPendingConnection();
 
+	CurrentUser *inst = CurrentUser::getInst();
+
+	inst->insertNewClient(client);
+	//connect(client, &QTcpSocket::disconnected, [=]()
+	//{
+
+	//});
 }
+

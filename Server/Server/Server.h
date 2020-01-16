@@ -20,4 +20,5 @@ public slots:
 	void startClicked();
 	void connectSlot();
 	void mainSlot();
+
 };

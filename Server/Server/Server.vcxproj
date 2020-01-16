@@ -59,7 +59,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalIncludeDirectories>E:\QtChat\SqlHandler;E:\QtChat\NetWorkHandler;E:\QtChat\Entity;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QtChat\SqlHandler;E:\QtChat\NetWorkHandler;E:\QtChat\Entity;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -81,7 +81,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CurrentUser.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainFactory.cpp" />
     <ClCompile Include="Server.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +105,10 @@
     <ProjectReference Include="..\..\SqlHandler\SqlHandler.vcxproj">
       <Project>{55bc594a-7bbf-4f64-a8a4-13fdbbb4c154}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CurrentUser.h" />
+    <ClInclude Include="MainFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

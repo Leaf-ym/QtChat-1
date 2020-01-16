@@ -6,7 +6,7 @@
 
 #define HostIp "192.168.1.22"
 #define Port 12345
-#define ClientPort 11111
+#define MainPort 11111
 
 //自定义协议包
 class NETWORKHANDLER_EXPORT NetWorkHandler
