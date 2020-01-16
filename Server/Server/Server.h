@@ -15,7 +15,9 @@ public:
 private:
 	Ui::ServerClass ui;
 	QTcpServer *server;
+	QTcpServer *mainServer;
 public slots:
 	void startClicked();
 	void connectSlot();
+	void mainSlot();
 };

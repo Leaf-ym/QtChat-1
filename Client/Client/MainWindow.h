@@ -2,7 +2,7 @@
 
 #include <QWidget>
 #include "ui_MainWindow.h"
-
+#include <QTcpSocket>
 class MainWindow : public QWidget
 {
 	Q_OBJECT
@@ -13,4 +13,6 @@ public:
 
 private:
 	Ui::MainWindow ui;
+	QTcpSocket *client;
+
 };
