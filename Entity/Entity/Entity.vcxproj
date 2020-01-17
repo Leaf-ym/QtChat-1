@@ -88,6 +88,7 @@
   <ItemGroup>
     <ClInclude Include="Entity.h" />
     <ClInclude Include="entity_global.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>

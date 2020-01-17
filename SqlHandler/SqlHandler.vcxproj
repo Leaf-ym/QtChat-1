@@ -83,10 +83,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ChatRoomHelper.cpp" />
     <ClCompile Include="SqlHandler.cpp" />
     <ClCompile Include="UserHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChatRoomHelper.h" />
     <ClInclude Include="SqlHandler.h" />
     <ClInclude Include="sqlhandler_global.h" />
     <ClInclude Include="UserHandler.h" />

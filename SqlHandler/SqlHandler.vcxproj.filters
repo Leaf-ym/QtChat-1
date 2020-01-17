@@ -27,12 +27,18 @@
     <ClCompile Include="UserHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChatRoomHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SqlHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatRoomHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

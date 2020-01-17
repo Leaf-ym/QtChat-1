@@ -35,6 +35,9 @@
     <ClInclude Include="User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity_global.h">

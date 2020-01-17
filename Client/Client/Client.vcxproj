@@ -62,7 +62,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalIncludeDirectories>E:\QtChat\NetWorkHandler;E:\QtChat\Entity;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QtChat\NetWorkHandler;E:\QtChat\Entity;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -84,18 +84,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ChatRoomWindow.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="registWindow.cpp" />
+    <ClCompile Include="RoomWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Login.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="ChatRoomWindow.ui" />
     <QtUic Include="Login.ui" />
     <QtUic Include="MainWindow.ui" />
     <QtUic Include="registWindow.ui" />
+    <QtUic Include="RoomWindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Login.qrc" />
@@ -116,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="RoomWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ChatRoomWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

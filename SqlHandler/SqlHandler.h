@@ -3,6 +3,7 @@
 #include "sqlhandler_global.h"
 #include "Entity/User.h"
 #include <QSqlDatabase>
+#include "QSqlQuery"
 #include <QMutex>
 class SQLHANDLER_EXPORT SqlHandler
 {
