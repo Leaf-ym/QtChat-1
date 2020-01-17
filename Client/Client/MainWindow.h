@@ -5,6 +5,8 @@
 #include <QTcpSocket>
 #include <QVector>
 #include "ChatRoomWindow.h"
+#include "NetWorkHandler/NetWorkHandler.h"
+#include "Entity/Room.h"
 class MainWindow : public QWidget
 {
 	Q_OBJECT
@@ -22,6 +24,13 @@ private:
 	QTcpSocket *client;
 	QString name;
 
-	QVector<ChatRoomWindow *> chatRooms;//当前打开聊天房间的合集
+	QVector<Room> chatRooms;//当前聊天房间的合集
+public slots:
+	void readSlot();
+
+private:
+	void loginRead(const NetWorkHandler&);
+
+
 
 };

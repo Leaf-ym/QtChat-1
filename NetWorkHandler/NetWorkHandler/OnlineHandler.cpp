@@ -5,6 +5,7 @@
 #include <QByteArray>
 #include <QIODevice>
 #include <QJsonDocument>
+#include <QJsonArray>
 OnlineHandler::OnlineHandler()
 {
 }
@@ -24,10 +25,16 @@ void OnlineHandler::handler(QTcpSocket * clientSocket, const NetWorkHandler & pa
 		nh["type"] = name;
 		ChatRoomHelper *ins = ChatRoomHelper::getInstance();
 		QVector<Room> rooms = ins->selectAllRoom();
-		QByteArray barry;
-		QDataStream stream(&barry, QIODevice::WriteOnly);
-		stream << rooms;
-		nh["rooms"] = QJsonDocument::fromJson(barry).array();
+		QJsonArray array;
+		int i = 0;
+		for (auto room:rooms)
+		{
+			QJsonObject obj;
+			obj.insert("name", room.name);
+			array.insert(i,obj);
+			++i;
+		}
+		nh["rooms"] = array;
 		clientSocket->write(nh.pack());
 	}
 	else

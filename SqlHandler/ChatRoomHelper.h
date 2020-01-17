@@ -20,7 +20,7 @@ private:
 public:
 	static ChatRoomHelper *getInstance();
 
-	void insertRoom(Room room) { rooms.push_back(room); }
+	void insertRoom(Room& room) { rooms.push_back(room); }
 	QVector<Room> selectAllRoom() { return rooms; }
 };
 

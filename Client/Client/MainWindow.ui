@@ -151,7 +151,7 @@
       <string>搜索框</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="roomList">
      <property name="geometry">
       <rect>
        <x>0</x>

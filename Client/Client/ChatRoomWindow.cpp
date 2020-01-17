@@ -8,4 +8,5 @@ ChatRoomWindow::ChatRoomWindow(QWidget *parent)
 
 ChatRoomWindow::~ChatRoomWindow()
 {
+
 }

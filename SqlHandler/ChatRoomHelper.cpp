@@ -1,10 +1,13 @@
 #include "ChatRoomHelper.h"
 
-QMutex SqlHandler::mutex;
+QMutex ChatRoomHelper::mutex;
 ChatRoomHelper* ChatRoomHelper::instance = nullptr;
 
 ChatRoomHelper::ChatRoomHelper()
 {
+	Room room;
+	room.name = "dfzz";
+	rooms.push_back(room);
 }
 
 
