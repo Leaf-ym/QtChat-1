@@ -5,6 +5,7 @@
 #include <QDataStream>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QListWidgetItem>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QWidget(parent)
@@ -14,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	loginWrite();
 	connect(client, SIGNAL(readyRead()), this, SLOT(readSlot()));
+	connect(ui.createroomButton, SIGNAL(clicked()), this, SLOT(createRoomWrite()));
 	ui.setupUi(this);
 }
 
@@ -27,8 +29,6 @@ void MainWindow::closeEvent(QCloseEvent * event)
 	nh.setType(NetWorkHandler::offline);
 	nh["name"] = name;
 	client->write(nh.pack());
-	//client->readAll();
-	//delete client;
 }
 
 void MainWindow::setName(const QString & userName)
@@ -49,7 +49,9 @@ void MainWindow::readSlot()
 		case NetWorkHandler::online:
 			loginRead(packRet);
 			break;
-
+		case NetWorkHandler::createroom:
+			createRoomRead(packRet);
+			break;
 		default:
 			break;
 		}
@@ -70,6 +72,11 @@ void MainWindow::loginWrite()
 	client->write(nh.pack());
 }
 
+void MainWindow::createRoomWrite()
+{
+
+}
+
 void MainWindow::loginRead(const NetWorkHandler &package)
 {
 	QString type = package["type"].toString();
@@ -81,10 +88,15 @@ void MainWindow::loginRead(const NetWorkHandler &package)
 		{
 			Room room;
 			room.name = ar.toObject().value("name").toString();
-			ui.imageLabel->setText(room.name);
 			chatRooms.push_back(room);
+			//QLabel *label=new QLabel(room.name, 0);
+			QListWidgetItem *item = new QListWidgetItem(room.name,ui.roomList);
+			ui.roomList->addItem(item);
 		}
 	}
 	else{}
 }
 
+void MainWindow::createRoomRead(const NetWorkHandler &)
+{
+}

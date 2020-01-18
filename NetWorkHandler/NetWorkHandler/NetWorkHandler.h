@@ -4,7 +4,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 
-#define HostIp "192.168.1.22"
+#define HostIp "192.168.20.129"
 #define Port 12345
 #define MainPort 11111
 
@@ -19,6 +19,8 @@ public:
 		offline,			//下线
 		online,				//上线
 		//chat               //聊天
+		createroom,			//创建群聊
+
 
 		success = 100,
 		fail

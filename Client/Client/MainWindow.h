@@ -18,6 +18,7 @@ public:
 	void setName(const QString& userName);
 
 	void loginWrite();
+
 private:
 	Ui::MainWindow ui;
 
@@ -27,10 +28,10 @@ private:
 	QVector<Room> chatRooms;//当前聊天房间的合集
 public slots:
 	void readSlot();
+	void createRoomWrite();
 
 private:
 	void loginRead(const NetWorkHandler&);
-
-
+	void createRoomRead(const NetWorkHandler&);
 
 };

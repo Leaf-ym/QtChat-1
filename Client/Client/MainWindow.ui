@@ -108,7 +108,7 @@
      <string>创建直播</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="createroomButton">
     <property name="geometry">
      <rect>
       <x>420</x>

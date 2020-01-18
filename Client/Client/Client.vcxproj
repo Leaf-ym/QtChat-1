@@ -95,7 +95,6 @@
     <QtMoc Include="Login.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="ChatRoomWindow.ui" />
     <QtUic Include="Login.ui" />
     <QtUic Include="MainWindow.ui" />
     <QtUic Include="registWindow.ui" />
